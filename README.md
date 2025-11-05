@@ -1,1 +1,1 @@
-Bienvenido a mi interactivo sobre la Kawasaki HR2 
+· Bienvenido a mi interactivo sobre la Kawasaki HR2 
