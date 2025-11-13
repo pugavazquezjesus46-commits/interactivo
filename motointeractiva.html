@@ -698,10 +698,10 @@
 
         function startQuiz() {
             let puntaje = 0;
-            const totalPreguntas = 10;
+            const totalPreguntas = 15; // actualizado: ahora son 15 preguntas
 
             alert("🏍️ Bienvenido al Quiz de la Kawasaki H2R 🏍️");
-            alert("Responde correctamente todas las preguntas. ¡Demuestra tu conocimiento!");
+            alert("Responde correctamente. Hay " + totalPreguntas + " preguntas. ¡Demuestra tu conocimiento!");
 
             let p1 = prompt("1. ¿Cuál es la potencia de la H2R? (en HP)");
             if (p1 && (p1.trim() === "310" || p1.trim() === "310hp")) {
@@ -783,23 +783,47 @@
                 alert("❌ Incorrecto. Respuesta: 210 km/h.");
             }
 
-           if (puntaje >= 6) {
-                alert("🏆 ¡FELICIDADES! Has respondido " + puntaje + " de " + totalPreguntas + " correctamente.");
+            // Nuevas preguntas (11-15)
+            let p11 = prompt("11. ¿Cuál es el neumático trasero recomendado? (ej: 200/55 R17)");
+            if (p11 && p11.trim().includes("200")) { puntaje++; alert("✅ Correcto: 200/55 R17."); }
+            else { alert("❌ Incorrecto. Respuesta: 200/55 R17."); }
+
+            let p12 = prompt("12. ¿Qué material suele usarse en el escape para bajar peso? (ej: titanio)");
+            if (p12 && p12.trim().toLowerCase().includes("titanio")) { puntaje++; alert("✅ Correcto: titanio."); }
+            else { alert("❌ Incorrecto. Respuesta: Titanio."); }
+
+            let p13 = prompt("13. ¿Tiempo aproximado 0-100 km/h? (en segundos)");
+            if (p13 && (p13.trim() === "2.5" || p13.trim() === "2.5s")) { puntaje++; alert("✅ Correcto: 2.5s."); }
+            else { alert("❌ Incorrecto. Respuesta: 2.5 segundos."); }
+
+            let p14 = prompt("14. ¿Altura del asiento aproximada? (en mm)");
+            if (p14 && (p14.trim() === "830" || p14.trim() === "830 mm")) { puntaje++; alert("✅ Correcto: 830 mm."); }
+            else { alert("❌ Incorrecto. Respuesta: 830 mm."); }
+
+            let p15 = prompt("15. ¿Qué tipo de frenos suele montar la H2R? (marca o tipo)");
+            if (p15 && (p15.trim().toLowerCase().includes("brembo") || p15.trim().toLowerCase().includes("carbon") || p15.trim().toLowerCase().includes("cerámico"))) {
+                puntaje++; alert("✅ Correcto: frenos de alto rendimiento (ej. Brembo / carbono cerámico).");
+            } else {
+                alert("❌ Incorrecto. Respuesta: frenos de alto rendimiento (ej. Brembo / carbono cerámico).");
+            }
+
+            // actualizar umbral de aprobación: ahora se aprueba con 10 o más (ajústalo si lo deseas)
+            if (puntaje >= 10) {
+                alert("🏆 ¡FELICIDADES! Has respondido " + puntaje + " de " + totalPreguntas + " correctamente. Aprobado.");
                 document.getElementById("fiesta").classList.add("visible");
                 document.getElementById("calif").textContent = puntaje + "/" + totalPreguntas;
                 document.getElementById("resultado").setAttribute("class", "visible");
                                document.getElementById("boton-reintentar").classList.remove("invisible");
                 document.getElementById("boton-reintentar").classList.add("visible");
-            } else if (puntaje <= 5 ) {
-                
-                alert("Has respondido " + puntaje + " de " + totalPreguntas + " correctamente. ¡Intenta de nuevo!");
+            } else {
+                alert("Has respondido " + puntaje + " de " + totalPreguntas + " correctamente. No es suficiente para aprobar, pero buen intento.");
                  document.getElementById("fiesta").classList.add("visible");
                 document.getElementById("calificación").textContent = puntaje + "/" + totalPreguntas;
                 document.getElementById("Resultado").setAttribute("class", "visible");
                 document.getElementById("boton-reintentar").classList.remove("invisible");
                 document.getElementById("boton-reintentar").classList.add("visible");
             }
-            }
+        }
     </script>
 </body>
 </html>
