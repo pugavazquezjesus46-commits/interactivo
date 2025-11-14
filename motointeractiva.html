@@ -698,7 +698,7 @@
 
         function startQuiz() {
             let puntaje = 0;
-            const totalPreguntas = 15; // actualizado: ahora son 15 preguntas
+            const totalPreguntas = 20; // actualizado: ahora son 20 preguntas
 
             alert("🏍️ Bienvenido al Quiz de la Kawasaki H2R 🏍️");
             alert("Responde correctamente. Hay " + totalPreguntas + " preguntas. ¡Demuestra tu conocimiento!");
@@ -804,11 +804,45 @@
             if (p15 && (p15.trim().toLowerCase().includes("brembo") || p15.trim().toLowerCase().includes("carbon") || p15.trim().toLowerCase().includes("cerámico"))) {
                 puntaje++; alert("✅ Correcto: frenos de alto rendimiento (ej. Brembo / carbono cerámico).");
             } else {
-                alert("❌ Incorrecto. Respuesta: frenos de alto rendimiento (ej. Brembo / carbono cerámico).");
+                alert("❌ Incorrecto. Respuesta: Frenos de alto rendimiento (ej. Brembo / carbono cerámico).");
             }
+            // Nuevas preguntas (16-20)
+
+            let p16 = prompt("16. ¿Cómo influye el diseño del motor y la turbocompresión en el rendimiento general de la H2R? (Diseño y estructura)");
+            if (p16 && (p16.trim().toLowerCase().includes("brembo") || p16.trim().toLowerCase().includes("carbon") || p15.trim().toLowerCase().includes("cerámico"))) {
+                puntaje++; alert("✅ Correcto: Aumenta la potencia y la aceleración, logrando más de 300 hp. (ej. Brembo / carbono cerámico).");
+            } else {
+                alert("❌ Incorrecto. Respuesta: El motor con compresor aumenta la potencia y la aceleración, logrando más de 300 hp. (ej. Brembo / carbono cerámico).");
+            }
+            let p17 = prompt("17. ¿Qué tecnología de supercarga utiliza la H2R para conseguir su rendimiento impresionante? (Tecnologia)");
+            if (p17 && (p17.trim().toLowerCase().includes("brembo") || p17.trim().toLowerCase().includes("carbon") || p15.trim().toLowerCase().includes("cerámico"))) {
+                puntaje++; alert("✅ Correcto: Compresor centrífugo que aumenta la cantidad de aire en el motor. (ej. Brembo / carbono cerámico).");
+            } else {
+                alert("❌ Incorrecto. Respuesta: Usa un compresor centrífugo que aumenta la cantidad de aire en el motor, mejorando la potencia. (ej. Brembo / carbono cerámico).");
+            }
+            let p18 = prompt("18. ¿Cómo afecta el uso del sistema de frenos Brembo en la H2R al comportamiento de la moto en pista? (Prueba)");
+            if (p18 && (p18.trim().toLowerCase().includes("brembo") || p18.trim().toLowerCase().includes("carbon") || p15.trim().toLowerCase().includes("cerámico"))) {
+                puntaje++; alert("✅ Correcto: Ofrece frenado potente y control preciso. (ej. Brembo / carbono cerámico).");
+            } else {
+                alert("❌ Incorrecto. Respuesta: Ofrece frenado potente y control preciso, crucial para altas velocidades y manejo en pista. (ej. Brembo / carbono cerámico).");
+            }
+            let p19 = prompt("19. ¿Qué diferencias principales existen entre la H2R y la versión de calle, la H2? (Validez)");
+            if (p19 && (p19.trim().toLowerCase().includes("brembo") || p19.trim().toLowerCase().includes("carbon") || p15.trim().toLowerCase().includes("cerámico"))) {
+                puntaje++; alert("✅ Correcto: La H2R tiene más de 300 hp, es para pista, y la H2 tiene 200 hp y es legal para la calle. (ej. Brembo / carbono cerámico).");
+            } else {
+                alert("❌ Incorrecto. Respuesta: La H2R tiene más de 300 hp, es para pista, y la H2 tiene 200 hp y es legal para la calle. (ej. Brembo / carbono cerámico).");
+            }
+            let p20 = prompt("20. ¿Cuál es el precio aproximado de la Kawasaki H2R? (Precio)");
+            if (p20 && (p20.trim().toLowerCase().includes("brembo") || p20.trim().toLowerCase().includes("carbon") || p15.trim().toLowerCase().includes("cerámico"))) {
+                puntaje++; alert("✅ Correcto: Alrededor de 60,000 dólares. (ej. Brembo / carbono cerámico).");
+            } else {
+                alert("❌ Incorrecto. Respuesta: Alrededor de 60,000 dólares, por su motor de alto rendimiento, supercarga y exclusividad. (ej. Brembo / carbono cerámico).");
+            }
+        
+           
 
             // actualizar umbral de aprobación: ahora se aprueba con 10 o más (ajústalo si lo deseas)
-            if (puntaje >= 10) {
+            if (puntaje >= 15) {
                 alert("🏆 ¡FELICIDADES! Has respondido " + puntaje + " de " + totalPreguntas + " correctamente. Aprobado.");
                 document.getElementById("fiesta").classList.add("visible");
                 document.getElementById("calif").textContent = puntaje + "/" + totalPreguntas;
@@ -826,4 +860,5 @@
         }
     </script>
 </body>
+
 </html>
